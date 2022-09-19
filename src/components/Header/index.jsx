@@ -1,51 +1,72 @@
-import { Link } from 'react-router-dom';
-import { Logo, Nav, NavMenu, Form } from './styles'
-import logo from '../../assets/logo.png'
+import { Link } from 'react-router-dom'
+import { Logo, Nav, NavMenu, MobileIcon, NavContent } from './styles'
+import logo from '/logo.png'
 
-import { FaFilm, FaHome, FaListUl, FaRandom, FaSearch, FaSpinner } from "react-icons/fa";
+import {
+  FaFilm,
+  FaHome,
+  FaListUl,
+  FaRandom,
+  FaSearch,
+  FaSpinner
+} from 'react-icons/fa'
+import { List, X } from 'phosphor-react'
+import { useState } from 'react'
 
 export function Header() {
+  const [click, setClick] = useState(false)
+
+  const handleOpen = () => {
+    setClick(!click)
+  }
+
   return (
     <Nav>
-      <Logo>
-        <img src={logo} alt="Logo" />
-        <h2>Turtle<span>Movie</span></h2>
-      </Logo>
+      <NavContent>
+        <Logo>
+          <img src={logo} alt="Logo" />
+          <h2>
+            Turtle<span>Movie</span>
+          </h2>
+        </Logo>
 
-      <NavMenu>
-        <ul>
-          <Link to="/">
-            <FaHome/>
-            <span>Home</span>
-          </Link>
+        <MobileIcon onClick={handleOpen}>{click ? <X /> : <List />}</MobileIcon>
 
-          <Link to="/movies/popular">
-            <FaFilm />
-            <span>Popular</span>
-          </Link>
-          
-          <Link to="/movies/top_ranking">
-            <FaListUl />
-            <span>Top Ranking</span>
-          </Link>
+        <NavMenu onClick={handleOpen} click={click}>
+          <ul>
+            <Link to="/">
+              <FaHome />
+              <span>Home</span>
+            </Link>
 
-          <Link to="/movies/breve">
-            <FaSpinner />
-            <span>Em breve</span>
-          </Link>
+            <Link to="/movies/popular">
+              <FaFilm />
+              <span>Popular</span>
+            </Link>
 
-          <Link to="/movies/random">
-            <FaRandom />
-            <span>Random</span>
-          </Link>
-        </ul>
-      </NavMenu>  
+            <Link to="/movies/top_ranking">
+              <FaListUl />
+              <span>Top Ranking</span>
+            </Link>
 
+            <Link to="/movies/breve">
+              <FaSpinner />
+              <span>Em breve</span>
+            </Link>
+
+            <Link to="/movies/random">
+              <FaRandom />
+              <span>Random</span>
+            </Link>
+
+            <Link to={`/search`}>
+              <FaSearch />
+              <span>Pesquisar</span>
+            </Link>
+          </ul>
       
-      {/* <Form>
-        <input type="text" placeholder='Busque um filme' />
-        <button type='submit'> <FaSearch /> </button>          
-      </Form> */}
-  </Nav>
+        </NavMenu>
+      </NavContent>
+    </Nav>
   )
 }

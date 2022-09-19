@@ -2,66 +2,94 @@ import styled from 'styled-components'
 
 export const Nav = styled.header`
   background: var(--background);
-  z-index: 100;
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  justify-content: space-between;
-  height: 4.5rem;
-  padding: 0 2.5rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 994px) {
+    max-width: 768px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+`
+
+export const NavContent = styled.div`
+  height: 4.5rem;
+  z-index: 10;
+
+  @media (min-width: 994px) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 `
 
 export const Logo = styled.div`
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 
-@media (max-width: 768px) {
-  display: none;
-}
-
-img{
-  width: 4rem;
-  
   @media (max-width: 994px) {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10;
+  }
+
+  img {
+    width: 4rem;
+  }
+
+  span {
+    color: var(--logo-color);
+  }
+`
+
+export const MobileIcon = styled.div`
   display: none;
-}
-}
 
-span {
-  color: var(--logo-color);
-}
-
+  @media (max-width: 994px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 10;
+  }
 `
 
 export const NavMenu = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7rem;
+
+  @media (max-width: 994px) {
+    height: 100vh;
+    width: 100vw;
+    background: var(--background);
+    display: ${({ click }) => (click ? 'block' : 'none')};
+  }
 
   ul {
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
 
-    @media (max-width: 768px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 2rem;
-    align-items: center;
-    justify-content: center;
-  }
+    @media (max-width: 994px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 10rem;
+    }
 
     a {
       display: flex;
       gap: 3px;
 
       font-weight: bold;
-
       color: var(--text-primary);
       height: 1rem;
-
       cursor: pointer;
 
       span {
@@ -98,38 +126,6 @@ export const NavMenu = styled.div`
           opacity: 1 !important;
         }
       }
-    }
-  }
-` 
-
-export const Form = styled.form`
-  display: flex;
-  gap: 10px;
-
-  input {
-    padding: 0.2rem 0.8rem;
-    border-radius: 4px;
-    border: none;
-    font-size: 1rem;
-  }
-
-  button {
-    padding: 0.8rem 1rem;
-    font-weight: 500;
-
-    background: transparent;
-    color: var(--text-primary);
-    text-transform: uppercase;
-
-    border: 1px solid #fff;
-    border-radius: 4px;
-    cursor: pointer;
-
-    &:hover {
-      background-color: var(--text-primary);
-      color: #000;
-      border-color: transparent;
-      transition-duration: 500ms;
     }
   }
 `
