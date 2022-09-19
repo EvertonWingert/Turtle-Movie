@@ -1,5 +1,4 @@
 import { Slider } from "../../components/Slider";
-import { Search } from "../search/search";
 
 export function Home() {
   return (

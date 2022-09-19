@@ -59,7 +59,7 @@ export function Header() {
               <span>Random</span>
             </Link>
 
-            <Link to={`/search`}>
+            <Link to='/search'>
               <FaSearch />
               <span>Pesquisar</span>
             </Link>

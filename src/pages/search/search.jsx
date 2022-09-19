@@ -1,4 +1,5 @@
 import { FaSearch } from 'react-icons/fa'
+import { Slider } from '../../components/Slider';
 import { Form } from "./styles";
  
 export function Search() {
@@ -8,6 +9,8 @@ export function Search() {
         <input type="text" placeholder='Busque um filme' />
         <button type='submit'> <FaSearch /> </button>          
       </Form>   
+
+      <Slider />
     </section>
   )
 }
