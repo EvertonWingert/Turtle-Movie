@@ -45,7 +45,7 @@ export const CardContent = styled.div`
 
   h2 {
     font-weight: 900;
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 
   span {
