@@ -33,17 +33,17 @@ export function Slider() {
             </Image>
             <Content>
               <h1>{trending ? trending.original_name : "" }</h1>
-              <h1>{trending ? trending.original_title : "" }</h1>
+              <h1>{trending ? trending.original_title : "" }</h1> 
               <div>
                  <article>
-                    {trending ? trending.release_date: ""}
+                    {trending ? trending.release_date : ""}
                     <span>
                       <FaStar />
-                      {trending ? trending.vote_average: ""}
+                      {trending ? trending.vote_average : ""}
                     </span>
                  </article>
 
-                <p>{trending ? trending.overview: ""}</p>
+                <p>{trending ? trending.overview : ""}</p>
               </div>
             </Content>
           </Link>

@@ -10,7 +10,6 @@ import {
   FaTv,
   FaSpinner
 } from 'react-icons/fa'
-import { ImFilm } from 'react-icons/im'
 import { List, X } from 'phosphor-react'
 import { useState } from 'react'
 
@@ -40,30 +39,30 @@ export function Header() {
               <span>Home</span>
             </Link>
 
-            <Link to="/series/serie">
-              <FaTv />
-              <span>Series</span>
-            </Link>
-
-            <Link to="/movies/movie">
+            <Link to="/movie">
               <FaFilm />
               <span>Movie</span>
             </Link>
 
-            <Link to="/movies/random">
+            <Link to="/serie">
+              <FaTv />
+              <span>Tv</span>
+            </Link>
+
+            {/* <Link to="/popular/popular">
               <FaAngleDoubleUp />
               <span>Popular</span>
             </Link>
 
-            <Link to="/movies/top_ranking">
+            <Link to="/ranking/top_ranking">
               <FaListUl />
               <span>Top Ranking</span>
             </Link>
 
-            <Link to="/movies/breve">
+            <Link to="/breve/breve">
               <FaSpinner />
               <span>Em breve</span>
-            </Link>
+            </Link> */}
           </ul>
       
         </NavMenu>
