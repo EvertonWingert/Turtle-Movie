@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Logo, Nav, NavMenu, MobileIcon, NavContent } from './styles'
-import logo from '/logo.png'
+import logo from '/logo-new-aba.png'
 
 import {
   FaFilm,
@@ -41,12 +41,12 @@ export function Header() {
 
             <Link to="/movie">
               <FaFilm />
-              <span>Movie</span>
+              <span>Filmes</span>
             </Link>
 
             <Link to="/serie">
               <FaTv />
-              <span>Tv</span>
+              <span>Series</span>
             </Link>
 
             {/* <Link to="/popular/popular">

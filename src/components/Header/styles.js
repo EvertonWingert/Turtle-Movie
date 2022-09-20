@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 
 export const Nav = styled.header`
+  position: fixed;
+  z-index: 30;
+  width: 100vw;
   background: var(--background);
 
   @media (max-width: 994px) {
-    max-width: 768px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,8 +14,7 @@ export const Nav = styled.header`
 `
 
 export const NavContent = styled.div`
-  height: 4.5rem;
-  z-index: 10;
+  height: 3.5rem;
 
   @media (min-width: 994px) {
     display: flex;
@@ -24,17 +25,18 @@ export const NavContent = styled.div`
 
 export const Logo = styled.div`
   display: flex;
+  gap: 0.4rem;
   align-items: center;
 
   @media (max-width: 994px) {
     position: absolute;
-    top: 1rem;
+    top: 0.5rem;
     left: 1rem;
     z-index: 10;
   }
 
   img {
-    width: 4rem;
+    width: 2rem;
   }
 
   span {
@@ -48,7 +50,7 @@ export const MobileIcon = styled.div`
   @media (max-width: 994px) {
     display: block;
     position: absolute;
-    top: 0;
+    top: -0.7rem;
     right: 1rem;
     transform: translate(-100%, 60%);
     font-size: 1.8rem;

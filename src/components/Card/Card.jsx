@@ -1,22 +1,24 @@
-import {useEffect, useState} from "react"
-
-import "./styles.css"
 import { Link } from "react-router-dom"
+import { FaStar } from "react-icons/fa"
+import { Card, CardContent } from "./styles"
 
 const Cards = ({ movie, showLink = true }) => {
   return (
     <Link to={`/:id`} style={{textDecoration:"none", color:"white"}}>
-            <div className="cards">
-                <img className="cards__img" src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} />
-                <div className="cards__overlay">
-                    <div className="card__title"><h2>{movie.title}</h2></div>
-                    <div className="card__runtime">
-                        {movie.release_date}
-                        <span className="card__rating">{movie.vote_average}</span>
+            <Card>
+                <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} />
+                <CardContent>
+                    <div className="card__title">
+                        <h2>{movie.title}</h2>
+                        <h2>{movie.name}</h2>
                     </div>
-                    <div className="card__description">{movie.overview.slice(0,118)+"..."}</div>
-                </div>
-            </div>
+                    <span>
+                        <FaStar />
+                        {movie.vote_average.toFixed(1)}
+                    </span>
+                    <p>{movie.overview.slice(0,100)+"..."}</p>
+                </CardContent>
+            </Card>
         </Link>
   )
 }

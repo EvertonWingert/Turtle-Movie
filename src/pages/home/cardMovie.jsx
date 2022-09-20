@@ -7,7 +7,7 @@ export function CardMovie() {
 
   useEffect(() => {
     fetch(
-      'https://api.themoviedb.org/3/trending/movie/day?api_key=cef3d4b27dbae1dfc147a65c011aa68b&language=pt-BR'
+      'https://api.themoviedb.org/3/trending/movie/week?api_key=cef3d4b27dbae1dfc147a65c011aa68b&language=pt-BR'
     )
       .then(res => res.json())
       .then(data => setTrendingMovies(data.results))

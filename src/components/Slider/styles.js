@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Image = styled.div`
  width: 100vw;
- height: 550px;
+ height: 560px;
  position: relative; 
  opacity: 0.9;
 
@@ -36,19 +36,14 @@ export const Content = styled.div`
     margin-bottom: 0.4rem;
     text-align: left;
   }
-
-  article {
+  
+  span {
     font-size: 1rem;
     display: flex;
-    gap: 2rem;
-    margin-bottom: 0.9rem;
-
-    span {
-      display: flex;
-      gap: 5px;
-    }
+    gap: 0.2rem;
+    margin-bottom: 1rem;    
   }
-
+ 
   p {
     font-style: italic;
     font-size: 1rem;
@@ -69,7 +64,7 @@ export const Content = styled.div`
       display: none;
      }
 
-    article {
+    span {
       font-size: 1rem;
     }
   }
