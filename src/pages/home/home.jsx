@@ -1,15 +1,16 @@
 import { Slider } from "../../components/Slider"
 import { CardMovie } from "./cardMovie"
-import { CardTv } from "./cardTv";
+import { CardTv } from "./cardTv"
+import { Section } from './styles'
 
 export function Home() {
   return (
     <>
       <Slider />
-      <div style={{marginLeft: "1rem"}}>
+      <Section>
         <CardMovie />
         <CardTv />
-      </div>
+      </Section>
     </>
   )
 }

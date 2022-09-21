@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useState } from 'react'
 import Cards from '../../components/Card/Card'
-import { Title } from './styles'
+import { Title, CardContainer } from './styles'
 
 export function CardMovie() {
   const [trendingMovies, setTrendingMovies] = useState([])
@@ -15,14 +15,16 @@ export function CardMovie() {
   }, [])
 
   return (
-    <div>
-      <Title >
+    <>
+      <Title>
         <span>Filmes</span> em alta da semana
-        </Title>
-      {trendingMovies.length > 0 &&
-        trendingMovies.map(movie => {
-          return <Cards key={movie.id} movie={movie} />
-        })}
-    </div>
+      </Title>
+      <CardContainer>
+        {trendingMovies.length > 0 &&
+          trendingMovies.map(movie => {
+            return <Cards key={movie.id} movie={movie} />
+          })}
+      </CardContainer>
+    </>
   )
 }
