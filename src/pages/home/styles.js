@@ -8,6 +8,12 @@ export const Section = styled.div`
 `
 
 export const CardContainer = styled.div`
+ @media (max-width: 467px) {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+ }
+
  @media(min-width: 468px){
   display: grid;
   grid-template-columns: repeat(2, 1fr);
