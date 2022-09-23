@@ -5,8 +5,7 @@ import { useParams } from 'react-router-dom'
 import {
   Container,
   ContentDescription,
-  ContentDetail,
-  Production
+  ContentDetail
 } from './styles'
 import './styles.css'
 
