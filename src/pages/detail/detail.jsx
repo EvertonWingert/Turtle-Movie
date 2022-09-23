@@ -7,7 +7,6 @@ import {
   ContentDescription,
   ContentDetail
 } from './styles'
-import './styles.css'
 
 export function Detail() {
   const [detail, setDetail] = useState()
