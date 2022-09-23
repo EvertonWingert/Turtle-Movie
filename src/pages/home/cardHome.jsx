@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useState } from 'react'
-import Cards from '../../components/Card/Card'
+import Cards from '../../components/Card'
 import { Title, CardContainer } from './styles'
 
 export function CardHome() {

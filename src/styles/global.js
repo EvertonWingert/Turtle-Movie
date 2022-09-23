@@ -28,6 +28,16 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+::-webkit-scrollbar{
+  width: 0.5rem;
+  background-color: #011432;
+}
+
+::-webkit-scrollbar-thumb{
+  border-radius: 0.5rem;
+  background-color: #2662d9;
+}
+
 `
 
 export default GlobalStyle

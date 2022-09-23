@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Logo, Nav, NavMenu, MobileIcon, NavContent } from './styles'
-import logo from '/logo-new-aba.png'
+import logo from '/logo.png'
 
 import {
   FaFilm,
