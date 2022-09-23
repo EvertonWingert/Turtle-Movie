@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Card, CardContent, Loading } from './styles'
 import { FaStar } from 'react-icons/fa'
 import { CardContainer } from '../../pages/home/styles'
+import { Detail } from '../../pages/detail/detail'
 
-const Cards = ({ movie, showLink = true }) => {
+const Cards = ({ movie }) => {
   const [isLoading, setIsLoading] = useState(true)
-
+  
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false)
@@ -20,7 +21,9 @@ const Cards = ({ movie, showLink = true }) => {
           <Loading />
         </Card>
       ) : (
-          <Link to={`/:id`} style={{width: "200px", marginLeft: "1rem"}}>
+          <Link
+            to={`details/${movie.media_type}/${movie.id}`} 
+            style={{width: "200px", marginLeft: "1rem"}}>
           <Card>
             <img
               src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
@@ -30,10 +33,13 @@ const Cards = ({ movie, showLink = true }) => {
                 <h2>{movie.title}</h2>
                 <h2>{movie.name}</h2>
               </div>
-              <span>
-                <FaStar />
-                {movie.vote_average.toFixed(1)}
-              </span>
+                <article>
+                  {movie.media_type}
+                  <span>
+                    <FaStar />
+                    {movie.vote_average.toFixed(1)}
+                  </span>
+                </article>
               <p>{movie.overview.slice(0, 100) + '...'}</p>
             </CardContent>
           </Card>

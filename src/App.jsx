@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Header } from "./components/Header"
+import { Detail } from './pages/detail/detail'
 import { Home } from './pages/home/home'
 import { Movie } from './pages/movie/movie'
 import { Serie } from './pages/serie/serie'
@@ -13,8 +14,9 @@ function App() {
       <Header /> 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="movie/:id" element={<Movie />} />
-          <Route path="series/:id" element={<Serie />} />
+          <Route path="/movie" element={<Movie />} />
+          <Route path="/serie" element={<Serie />} />
+          <Route path="/details/:type/:id" element={<Detail /> } />
           <Route path="/*" element={<h1>Error Page</h1>} />
         </Routes>
     </Router>

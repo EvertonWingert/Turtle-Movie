@@ -28,7 +28,7 @@ export function Slider() {
       {
         popularMovies.map(trending => {
           return (
-            <Link key={trending.id} to={`/trending${trending.id}`} >
+            <Link key={trending.id} to={`details/${trending.media_type}/${trending.id}`} >
             <Image>
               <img src={`https://image.tmdb.org/t/p/original${trending && trending.backdrop_path}`} />
             </Image>
@@ -37,7 +37,7 @@ export function Slider() {
               <h1>{trending ? trending.title : "" }</h1> 
               <div>
                  <article>
-                    
+                      {trending ? trending.media_type : ""}
                     <span>
                       <FaStar />
                       {trending ? trending.vote_average.toFixed(1) : ""}

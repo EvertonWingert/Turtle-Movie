@@ -15,7 +15,7 @@ export const Image = styled.div`
 export const Content = styled.div`
   position: absolute;
   padding: 5rem;
-  bottom: 0px;
+  bottom: 0;
   height: 70%;
   display: flex;
   flex-direction: column;
@@ -36,12 +36,21 @@ export const Content = styled.div`
     margin-bottom: 0.4rem;
     text-align: left;
   }
-  
-  span {
-    font-size: 1rem;
+  article {
     display: flex;
-    gap: 0.2rem;
-    margin-bottom: 1rem;    
+    align-items: center;
+    gap: 1rem;
+    color: #fef501;
+
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 1rem;  
+
+    span {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
   }
  
   p {

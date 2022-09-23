@@ -39,12 +39,12 @@ export function Header() {
               <span>Home</span>
             </Link>
 
-            <Link to="/movie">
+            <Link to="movie/">
               <FaFilm />
               <span>Filmes</span>
             </Link>
 
-            <Link to="/serie">
+            <Link to="serie/">
               <FaTv />
               <span>Series</span>
             </Link>

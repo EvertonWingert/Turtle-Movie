@@ -51,15 +51,22 @@ export const CardContent = styled.div`
     font-size: 1.3rem;
   }
 
-  span {
-    font-size: .85rem;
+  article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: #fef501;
+
+    font-size: .95rem;
     font-weight: 800;
     margin-bottom: 0.4rem;
-    
-    display: inline-flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: .2rem;
+
+    span { 
+      display: inline-flex;
+      align-items: center;
+      gap: .2rem;
+    } 
   }
 
   p {
