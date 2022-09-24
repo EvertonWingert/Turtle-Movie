@@ -13,7 +13,7 @@ export function Movie() {
 
   const getData = () => {
     fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=cef3d4b27dbae1dfc147a65c011aa68b&language=pt-BR`
+      `https://api.themoviedb.org/3/discover/movie?api_key=cef3d4b27dbae1dfc147a65c011aa68b&language=pt-BR&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
     )
       .then(res => res.json())
       .then(data => setTrendingMovies(data.results))

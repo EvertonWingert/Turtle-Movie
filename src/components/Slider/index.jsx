@@ -32,9 +32,9 @@ export function Slider() {
     >
       {popularMovies.map(trending => {
         return (
-          <Link to={`detail/${trending.media_type}/${trending.id}`}>
+          <Link key={trending.id} to={`detail/${trending.media_type}/${trending.id}`}>
             <Image>
-              <img
+              <img 
                 src={`https://image.tmdb.org/t/p/original${
                   trending && trending.backdrop_path
                 }`}
