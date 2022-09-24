@@ -5,13 +5,14 @@ import logo from '/logo.png'
 import {
   FaFilm,
   FaHome,
-  FaListUl,
-  FaAngleDoubleUp,
+  FaRandom,
   FaTv,
-  FaSpinner
+  FaSpinner,
+  FaSearch
 } from 'react-icons/fa'
 import { List, X } from 'phosphor-react'
 import { useState } from 'react'
+import { Detail } from '../../pages/detail/detail'
 
 export function Header() {
   const [click, setClick] = useState(false)
@@ -39,7 +40,7 @@ export function Header() {
               <span>Home</span>
             </Link>
 
-            <Link to="movie/">
+            <Link to={`movie/`}>
               <FaFilm />
               <span>Filmes</span>
             </Link>
@@ -49,20 +50,20 @@ export function Header() {
               <span>Series</span>
             </Link>
 
-            {/* <Link to="/popular/popular">
-              <FaAngleDoubleUp />
-              <span>Popular</span>
-            </Link>
-
-            <Link to="/ranking/top_ranking">
-              <FaListUl />
-              <span>Top Ranking</span>
-            </Link>
-
-            <Link to="/breve/breve">
+            {/* <Link to="/breve/breve">
               <FaSpinner />
               <span>Em breve</span>
-            </Link> */}
+            </Link>  */}
+
+            <Link to="/popular/popular">
+              <FaRandom />
+              <span>Random</span>
+            </Link>
+
+            <Link to="/search">
+              <FaSearch />
+              <span>Pesquisar</span>
+            </Link>
           </ul>
       
         </NavMenu>

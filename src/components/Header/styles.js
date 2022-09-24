@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Nav = styled.header`
   position: fixed;
+  top: 0;
   z-index: 30;
   width: 100vw;
   background: var(--background);

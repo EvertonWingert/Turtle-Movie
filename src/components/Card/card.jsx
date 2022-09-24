@@ -5,7 +5,7 @@ import { FaStar } from 'react-icons/fa'
 import { CardContainer } from '../../pages/home/styles'
 import { Detail } from '../../pages/detail/detail'
 
-const Cards = ({ movie }) => {
+const Cards = ({ movie, media_type }) => {
   const [isLoading, setIsLoading] = useState(true)
   
   useEffect(() => {
@@ -21,10 +21,7 @@ const Cards = ({ movie }) => {
           <Loading />
         </Card>
       ) : (
-          <Link
-            to={`details/${movie.media_type}/${movie.id}`} 
-            style={{width: "200px", marginLeft: "1rem"}}>
-          <Card>
+          <Card style={{width: "200px", marginLeft: "1rem"}}>
             <img
               src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
             />
@@ -34,7 +31,7 @@ const Cards = ({ movie }) => {
                 <h2>{movie.name}</h2>
               </div>
                 <article>
-                  {movie.media_type}
+                  {movie.media_type ? movie.media_type : movie.release_date}
                   <span>
                     <FaStar />
                     {movie.vote_average.toFixed(1)}
@@ -43,7 +40,6 @@ const Cards = ({ movie }) => {
               <p>{movie.overview.slice(0, 100) + '...'}</p>
             </CardContent>
           </Card>
-        </Link>
       )}
     </>
   )
