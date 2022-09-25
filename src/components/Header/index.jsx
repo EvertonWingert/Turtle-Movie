@@ -12,7 +12,6 @@ import {
 } from 'react-icons/fa'
 import { List, X } from 'phosphor-react'
 import { useState } from 'react'
-import { Detail } from '../../pages/detail/detail'
 
 export function Header() {
   const [click, setClick] = useState(false)

@@ -1,20 +1,36 @@
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { FaStar } from 'react-icons/fa'
 import { useParams } from 'react-router-dom'
+import ReactPlayer from 'react-player'
+
+
+import moment from 'moment'
+import 'moment/locale/pt-br'
+moment.locale('pt-br')
+
+import { BsPeopleFill, BsFillStarFill } from 'react-icons/bs'
+
 import {
-  Container,
+  ContainerDescription,
   ContentDescription,
-  ContentDetail
+  ContentDetail,
+  ContainerVideo,
+  Video
 } from './styles'
 
 export function Detail() {
   const [detail, setDetail] = useState()
   const { id, type } = useParams()
 
-  useEffect(() => {
-    getData()
-  }, [])
+  function formatDate(detail) {
+    let data = ''
+    if (detail.release_date !== undefined) {
+      data = moment(detail.release_date).format('DD/MM/YYYY')
+    } else if (detail.first_air_date !== undefined) {
+      data = moment(detail.first_air_date).format('DD/MM/YYYY')
+    }
+    return data
+  }
 
   useEffect(() => {
     getData()
@@ -24,98 +40,129 @@ export function Detail() {
     fetch(
       `https://api.themoviedb.org/3/${
         type ? type : 'Erro'
-      }/${id}?api_key=cef3d4b27dbae1dfc147a65c011aa68b&language=pt-BR`
+      }/${id}?api_key=cef3d4b27dbae1dfc147a65c011aa68b&language=pt-BR&append_to_response=videos`
     )
       .then(res => res.json())
       .then(data => setDetail(data))
   }
 
   return (
-    <Container>
-      <div className="banner">
+    <>
+      <ContainerDescription>
+        <div className="banner">
+          <img
+            src={`https://image.tmdb.org/t/p/original${
+              detail ? detail.backdrop_path : ''
+            }`}
+          />
+        </div>
+        <ContentDetail>
+          <div className='poster'>
+            <img
+              src={`https://image.tmdb.org/t/p/original${
+                detail ? detail.poster_path : ''
+              }`}
+            />
+          </div>
+
+          <ContentDescription>
+            <div>
+              <h2>{detail ? detail.title : ''}</h2>
+              <h2>{detail ? detail.name : ''}</h2>
+
+              <div className="tagline">
+                <b>{detail ? detail.tagline : ''}</b>
+              </div>
+
+              <article>
+                <span>
+                  <BsFillStarFill /> {detail ? detail.vote_average : ''}
+                </span>
+                <span>
+                  <BsPeopleFill /> {detail ? detail.vote_count : ''}
+                </span>
+              </article>
+
+              <div className="status">
+                <div className="data">
+                  <p>
+                    Status:{' '}
+                    <span>
+                      {detail?.status === 'Released'
+                        ? 'Completo'
+                        : 'Em laçamento'}
+                    </span>
+                  </p>
+                  <p>
+                    Lançamento:{' '}
+                    <span>{detail ? formatDate(detail) : 'Não informado'}</span>
+                  </p>
+                </div>
+                <p>
+                  Duração:{' '}
+                  <span>
+                    {detail?.runtime
+                      ? detail?.runtime + ' min'
+                      : 'Não informado'}
+                  </span>
+                </p>
+                <p>
+                  Produção:{' '}
+                  <span>
+                    {detail &&
+                      detail.production_companies &&
+                      detail.production_companies.map(company => {
+                        return (
+                          <>
+                            {company.logo_path && (
+                              <span>{company.name + '.  '}</span>
+                            )}
+                          </>
+                        )
+                      })}
+                  </span>
+                </p>
+              </div>
+
+              <div className="genres">
+                {detail && detail.genres
+                  ? detail.genres.map(genre => (
+                      <>
+                        <span id={genre.id}>{genre.name}</span>
+                      </>
+                    ))
+                  : ''}
+              </div>
+            </div>
+
+            <div className="description">
+              <h3>Sinopse</h3>
+              <p>{detail ? detail.overview : ''}</p>
+            </div>
+          </ContentDescription>
+        </ContentDetail>
+      </ContainerDescription>
+
+      <ContainerVideo>
+        <div className='imageVideo'>
         <img
           src={`https://image.tmdb.org/t/p/original${
             detail ? detail.backdrop_path : ''
           }`}
         />
-      </div>
-      <ContentDetail>
-        <img
-          className="movie__poster"
-          src={`https://image.tmdb.org/t/p/original${
-            detail ? detail.poster_path : ''
-          }`}
-        />
+        </div>
 
-        <ContentDescription>
-          <div className="movie__detailRightTop">
-            <h2>{detail ? detail.title : ''}</h2>
-            <h2>{detail ? detail.name : ''}</h2>
-
-            <div className="tagline">
-              <b>{detail ? detail.tagline : ''}</b>
-            </div>
-
-            <article className="movie__rating">
-              <span className="movie__voteCount">
-                <FaStar /> {detail ? detail.vote_average : ''}
-              </span>
-              {detail ? 'votos: (' + detail.vote_count + ')' : ''}
-            </article>
-
-            <div className="status">
-              <div className="data">
-                <p>
-                  Status:{' '}
-                  <span>
-                    {detail?.status === 'Released'
-                      ? 'Completo'
-                      : 'Em laçamento'}
-                  </span>
-                </p>
-                <p>
-                  Lançamento:{' '}
-                  <span>
-                    {detail?.release_date
-                      ? detail?.release_date
-                      : 'Não informado'}
-                  </span>
-                </p>
-              </div>
-              <p>
-                Duração:{' '}
-                <span>
-                  {detail?.runtime ? detail?.runtime + ' min' : 'Não informado'}
-                </span>
-              </p>
-
-              <p>
-                Produção:{' '}
-                {detail &&
-                  detail.production_companies &&
-                  detail.production_companies.map(company => (
-                    <>{company.logo_path && <span>{company.name}</span>}</>
-                  ))}
-              </p>
-            </div>
-
-            <div className="genres">
-              {detail && detail.genres
-                ? detail.genres.map(genre => (
-                    <>
-                      <span id={genre.id}>{genre.name}</span>
-                    </>
-                  ))
-                : ''}
-            </div>
-          </div>
-
-          <div className="description">
-            <h3>Sinopse</h3>
-            <p>{detail ? detail.overview : ''}</p>
-          </div>
-        </ContentDescription>
-      </ContentDetail>
-    </Container>
+        <Video>
+          <h2>Trailer</h2>
+          <ReactPlayer
+            url={`https://www.youtube.com/watch?v=${detail?.videos.results[0]?.key}`}
+            width="100%"
+            height="100%"
+            pip
+            config={{ file: { forceHLS: true } }}
+          ></ReactPlayer>
+        </Video>
+      </ContainerVideo>
+    </>
   )
 }

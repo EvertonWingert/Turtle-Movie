@@ -2,11 +2,32 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Card, CardContent, Loading } from './styles'
 import { FaStar } from 'react-icons/fa'
-import { CardContainer } from '../../pages/home/styles'
-import { Detail } from '../../pages/detail/detail'
+import moment from "moment";
+import "moment/locale/pt-br";
+moment.locale("pt-br");
 
-const Cards = ({ movie, media_type }) => {
+const Cards = ({ movie}) => {
   const [isLoading, setIsLoading] = useState(true)
+
+  function type(movie) {
+    let typeData = ''
+    if (movie.media_type === 'movie') {
+      return 'Filme'
+    } else if (movie.media_type === 'tv') {
+      return 'Tv Series'
+    }
+    return typeData
+  }
+
+  function formatDate(movie) {
+    let data = ''
+    if(movie.release_date !== undefined) {
+      data = moment(movie.release_date).format("YYYY")
+    } else if (movie.first_air_date !== undefined) {
+      data = moment(movie.first_air_date).format("YYYY")
+    }
+    return data
+  }
   
   useEffect(() => {
     setTimeout(() => {
@@ -31,7 +52,7 @@ const Cards = ({ movie, media_type }) => {
                 <h2>{movie.name}</h2>
               </div>
                 <article>
-                  {movie.media_type ? movie.media_type : movie.release_date}
+                  {movie.media_type ? type(movie) : formatDate(movie)}
                   <span>
                     <FaStar />
                     {movie.vote_average.toFixed(1)}

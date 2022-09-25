@@ -24,7 +24,7 @@ export function Serie() {
     <>
       <Section>
       <Title>
-        <span>Series</span> populares
+        <span>Series</span>
       </Title>
       <CardContainer>
         {trendingMovies.length > 0 && 

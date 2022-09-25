@@ -1,25 +1,24 @@
 import styled from "styled-components"
 
-export const Container = styled.div`
-  width: 100%;
-  position: relative;
+export const ContainerDescription = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media(min-width: 994px) {
+    margin-bottom: 4rem;
+  }
+
 
   .banner{
     width: 100%;
 
     img {
       width: 100%;
-      height: 31rem;
+      height: 18rem;
       object-fit: cover;
       object-position: 0 30%;
-
-      @media(max-width: 468px) {
-        height: 18rem;
-      }
 
       @media(min-width: 469px) {
         height: 21rem;
@@ -29,26 +28,33 @@ export const Container = styled.div`
         height: 25rem;
       }
 
+      @media(min-width: 994px) {
+        height: 31rem;
+      }
+
     }
   }
 `
 
 export const ContentDetail = styled.div`
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
   position: relative;
-  bottom: 225px;
-  align-items: center;
-  width: 75%;
-  bottom: 200px; 
+  bottom: 230px;
+  
+  @media(min-width: 994px) {
+    padding-left: 2rem;
+  }
 
-  @media(max-width: 768px) {
+  @media(max-width: 994px) {
     display: flex;
     flex-direction: column;
+    width: 75%;
   }
   
-  img{
+  .poster{
+    img{
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.86) 0px 22px 40px 6px;
 
@@ -64,16 +70,19 @@ export const ContentDetail = styled.div`
   }
 
   @media(min-width: 768px) {
-    margin: 3rem 0;
-    margin-right: 30px;
+    margin-right: 1rem;
     width: 13rem;
   }
 
   @media(min-width: 994px) {
-    margin-right: 30px;
-    margin-top: 1rem;
-    width: 19rem;
+    margin-right: 1rem;
+    width: 15rem;
   }
+
+  @media(min-width: 1200px) {
+    width: 18rem;
+  }
+}
 
   } 
 `
@@ -81,17 +90,17 @@ export const ContentDetail = styled.div`
 export const ContentDescription = styled.div`
   display: flex;
   flex-direction: column;
-  height: 1px;
-  margin-top: 1rem;
   
-  @media (min-width: 994px) {
-      margin-bottom: 5rem;
-    }
+  @media(min-width: 994px) {
+    position: relative;
+    top: 230px;
+  }
 
   h2{
     font-weight: 600;
     font-size: 2rem;
     margin-bottom: .6rem;
+    max-width: 30rem;
   
     @media (min-width: 469px) {
       font-size: 2rem;
@@ -120,10 +129,22 @@ export const ContentDescription = styled.div`
 
   article {
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     color: #fef501;
     margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 900;
+
+    span{
+      display: flex;
+      align-items: center;
+      gap: .2rem;
+      
+    }
+
+    @media(min-width: 768px) {
+      font-size: 1.1rem;
+    }
   }
 
   .status{
@@ -131,10 +152,15 @@ export const ContentDescription = styled.div`
     flex-direction: column;
     margin-bottom: 2rem;
     font-size: 1rem;
+
+    @media(min-width: 768px) {
+      font-size: 1.1rem;
+    }
     
     .data {
       display: flex;
       flex-direction: column;
+      
     }
     
     span {
@@ -165,9 +191,11 @@ export const ContentDescription = styled.div`
   }
 
   .description {
-    margin: 3rem 0;
-    flex: 0.8;
-    max-width: 40rem;
+    max-width: 30rem;
+
+    @media(max-width: 994px){
+      max-width: 20rem;
+    }
 
     h3 {
       font-size: 1.5rem;
@@ -175,5 +203,54 @@ export const ContentDescription = styled.div`
       font-weight: 600;
     }
   }
+
+`
+
+export const ContainerVideo = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+
+.imageVideo{
+  img {
+    z-index: -1;
+      width: 100%;
+      opacity: 0.4;
+      object-fit: cover;
+    }
+  }
+  
+  `
+
+export const Video = styled.div`
+z-index: 10;
+position: absolute;
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #00f7df;
+}
+
+@media(min-width: 468px){
+  width: 25rem;
+  height: 13rem;
+ }
+
+ @media(min-width: 768px){
+  width: 35rem;
+  height: 20rem;
+ }
+
+ @media(min-width: 994px){
+  width: 40rem;
+  height: 30rem;
+ }
+
+ @media(min-width: 1200px){
+  width: 51rem;
+  height: 30rem;
+ }
 
 `

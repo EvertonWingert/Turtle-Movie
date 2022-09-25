@@ -23,14 +23,14 @@ export function Movie() {
     <>
       <Section>
         <Title>
-          <span>Filmes</span> populares
+          <span>Filmes</span> 
         </Title>
         <CardContainer>
           {trendingMovies.length > 0 &&
             trendingMovies.map(movie => {
               return (
-                <Link to={`${movie ? '' : 'movie'}/detail/movie/${movie.id}`}>
-                  <Cards key={movie.id} movie={movie} />
+                <Link key={movie.id}  to={`${movie ? '' : 'movie'}/detail/movie/${movie.id}`}>
+                  <Cards movie={movie} />
                 </Link>
               )
             })}

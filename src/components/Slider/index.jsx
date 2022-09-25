@@ -1,14 +1,27 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import moment from "moment"
+import "moment/locale/pt-br"
+moment.locale("pt-br")
 
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { Image, Content } from './styles'
-import { FaStar } from 'react-icons/fa'
+import { FaStar, FaRegCalendarAlt } from 'react-icons/fa'
 
 export function Slider() {
   const [popularMovies, setPopularMovies] = useState([])
 
+  function formatDate(trending) {
+    let data = ''
+    if(trending.release_date !== undefined) {
+      data = moment(trending.release_date).format('DD/MM/YYYY')
+    } else if (trending.first_air_date !== undefined) {
+      data = moment(trending.first_air_date).format('DD/MM/YYYY')
+    }
+    return data
+  }
+  
   useEffect(() => {
     getData()
   }, [])
@@ -45,7 +58,9 @@ export function Slider() {
               <h1>{trending ? trending.title : ''}</h1>
               <div>
                 <article>
-                  {trending ? trending.media_type : ''}
+                   <span>
+                    <FaRegCalendarAlt /> {trending ? formatDate(trending) : ''}
+                   </span>
                   <span>
                     <FaStar />
                     {trending ? trending.vote_average.toFixed(1) : ''}
