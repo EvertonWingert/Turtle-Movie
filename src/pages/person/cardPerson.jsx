@@ -5,7 +5,7 @@ import moment from "moment";
 import "moment/locale/pt-br";
 moment.locale("pt-br");
 
-const Cards = ({ movie}) => {
+const CardPerson = ({ movie}) => {
   const [isLoading, setIsLoading] = useState(true)
 
   function type(movie) {
@@ -65,4 +65,4 @@ const Cards = ({ movie}) => {
   )
 }
 
-export default Cards
+export default CardPerson

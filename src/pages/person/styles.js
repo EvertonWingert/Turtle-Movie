@@ -6,10 +6,10 @@ export const ContainerPerson = styled.section`
  align-items: center;
  gap: 2rem;
  padding-top: 8rem;
-
+ 
  @media(max-width: 994px) {
-  display: flex;
   flex-direction: column;
+  display: flex;
   justify-content: center;
   align-items: center;
  }
@@ -53,9 +53,8 @@ export const Info = styled.div`
 `
 
 export const Bio = styled.div`
- 
+ flex-direction: column;
  text-align: left;
- margin-bottom: 40rem;
  margin-left: 1rem;
  margin-right: 1rem;
 
@@ -64,18 +63,50 @@ export const Bio = styled.div`
   width: 30rem;
  }
 
+ @media(min-width: 1200px){ 
+  width: 45rem;
+ }
 
- h2 {
+
+ .title {
   font-size: 2rem;
   font-weight: 900;
   margin-bottom: 2rem;
  }
 
- p {
+ .description {
   font-size: 1.1rem;
   font-weight: 500;
  
  }
 
 
+`
+
+export const PersonDetail = styled.div`
+margin-top: 2.5rem;
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fef501;
+ }
+`
+
+export const PersonMovies = styled.div`
+ height: 35rem;
+ width: 100%;
+ 
+ .cards {
+
+   @media(min-width: 468px){
+    display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   }
+
+   @media(min-width: 1200px){
+    display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   }
+  }
+  overflow-y: scroll;
 `

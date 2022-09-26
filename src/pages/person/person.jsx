@@ -1,10 +1,11 @@
 import moment from 'moment/moment'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import Cards from '../../components/Card/card'
 
-import { ContainerPerson, Description, Info, Bio } from './styles'
+import { ContainerPerson, Description, Info, Bio, PersonMovies, PersonDetail } from './styles'
 
-export function Person() {
+export function Person({movie}) {
   const [person, setPerson] = useState()
   const { id, type } = useParams()
 
@@ -14,7 +15,7 @@ export function Person() {
 
   const getPerson = () => {
     fetch(
-      `https://api.themoviedb.org/3/person/${id}?api_key=cef3d4b27dbae1dfc147a65c011aa68b&language=pt-BR`
+      `https://api.themoviedb.org/3/person/${id}?api_key=cef3d4b27dbae1dfc147a65c011aa68b&language=pt-BR&append_to_response=combined_credits`
     )
       .then(response => response.json())
       .then(data => setPerson(data))
@@ -88,8 +89,25 @@ export function Person() {
       </Description>
 
       <Bio>
-        <h2>{person ? person.name : ''}</h2>
-        <p>{person ? person.biography : ''}</p>
+        <h2 className='title'>{person ? person.name : ''}</h2>
+        <p className='description'>{person ? person.biography : ''}</p>
+
+        <PersonDetail>
+          <h3>Conhecido(a) por</h3>
+          <PersonMovies>
+          <div className='cards'>
+          {person ?
+         person.combined_credits.cast.length > 0 && 
+         person.combined_credits.cast.map(movie => {
+          return (
+            <Link key={person.id} to={`${movie ? '' : 'movie'}/detail/movie/${movie.id}`}>
+              <Cards movie={movie} />
+            </Link>
+          )
+         }) : ''} 
+          </div>
+          </PersonMovies>
+        </PersonDetail>
       </Bio>
     </ContainerPerson>
   )
