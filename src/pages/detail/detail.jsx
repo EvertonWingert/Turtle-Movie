@@ -1,8 +1,8 @@
+import { APIkey } from '../../config/key'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ReactPlayer from 'react-player'
-
 
 import moment from 'moment'
 import 'moment/locale/pt-br'
@@ -40,7 +40,7 @@ export function Detail() {
     fetch(
       `https://api.themoviedb.org/3/${
         type ? type : 'Erro'
-      }/${id}?api_key=cef3d4b27dbae1dfc147a65c011aa68b&language=pt-BR&append_to_response=videos`
+      }/${id}?api_key=${APIkey}&language=pt-BR&append_to_response=videos`
     )
       .then(res => res.json())
       .then(data => setDetail(data))

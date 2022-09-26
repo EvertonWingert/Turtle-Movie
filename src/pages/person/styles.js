@@ -93,7 +93,7 @@ h3 {
 `
 
 export const PersonMovies = styled.div`
- height: 35rem;
+ height: 43rem;
  width: 100%;
  
  .cards {

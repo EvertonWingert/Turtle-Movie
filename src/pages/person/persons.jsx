@@ -1,3 +1,4 @@
+import { APIkey } from '../../config/key'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -14,7 +15,7 @@ export function Persons() {
 
   const People = () => {
     fetch(
-      `https://api.themoviedb.org/3/person/popular?api_key=cef3d4b27dbae1dfc147a65c011aa68b&language=en-US`
+      `https://api.themoviedb.org/3/person/popular?api_key=${APIkey}&language=en-US`
     )
       .then(response => response.json())
       .then(data => setPerson(data.results))

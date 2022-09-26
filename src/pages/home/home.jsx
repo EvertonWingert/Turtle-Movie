@@ -1,3 +1,4 @@
+import { APIkey } from '../../config/key'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -15,7 +16,7 @@ export function Home() {
 
   const getData = () => {
     fetch(
-      `https://api.themoviedb.org/3/trending/all/week?api_key=cef3d4b27dbae1dfc147a65c011aa68b&language=pt-BR`
+      `https://api.themoviedb.org/3/trending/all/week?api_key=${APIkey}&language=pt-BR`
     )
       .then(res => res.json())
       .then(data => setTrendingMovies(data.results))
