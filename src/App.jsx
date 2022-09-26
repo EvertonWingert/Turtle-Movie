@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Header } from "./components/Header"
 import { Detail } from './pages/detail/detail'
 import { Persons } from './pages/person/persons'
@@ -11,8 +11,7 @@ import { Person } from './pages/person/person'
 
 function App() {
   return (
-    <div>
-      <Router>
+    <BrowserRouter>
       <GlobalStyle />
       <Header /> 
         <Routes>
@@ -24,8 +23,7 @@ function App() {
           <Route path="/person/:id" element={<Person /> } />
           <Route path="/*" element={<Err />} />
         </Routes>
-    </Router>
-    </div>
+    </BrowserRouter>
   )
 }
 
