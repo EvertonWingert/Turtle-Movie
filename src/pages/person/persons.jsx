@@ -33,7 +33,7 @@ export function Persons() {
             return (
               <Link
                 key={person.id}
-                to={`${person ? '' : 'person'}/person/${person.id}`}
+                to={`/person/${person.id}`}
               >
                 <PersonContent>
                   <img

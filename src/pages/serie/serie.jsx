@@ -32,7 +32,7 @@ export function Serie() {
           trendingMovies.map(movie => {
             return (
               <Link 
-                to={`${movie ? '' : 'tv'}/detail/tv/${movie.id}`}
+                to={`/detail/tv/${movie.id}`}
               >
                 <Cards key={movie.id} movie={movie} />
               </Link>

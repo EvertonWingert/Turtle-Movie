@@ -101,7 +101,7 @@ export function Person() {
          person.combined_credits.cast.length > 0 && 
          person.combined_credits.cast.map(movie => {
           return (
-            <Link key={person.id} to={`${movie ? '' : 'movie'}/detail/movie/${movie.id}`}>
+            <Link key={person.id} to={`/detail/movie/${movie.id}`}>
               <Cards movie={movie} />
             </Link>
           )

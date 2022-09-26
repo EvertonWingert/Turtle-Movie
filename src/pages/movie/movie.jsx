@@ -30,7 +30,7 @@ export function Movie() {
           {trendingMovies.length > 0 &&
             trendingMovies.map(movie => {
               return (
-                <Link key={movie.id}  to={`${movie ? '' : 'movie'}/detail/movie/${movie.id}`}>
+                <Link key={movie.id}  to={`/detail/movie/${movie.id}`}>
                   <Cards movie={movie} />
                 </Link>
               )
