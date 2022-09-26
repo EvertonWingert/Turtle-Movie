@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Logo, Nav, NavMenu, MobileIcon, NavContent } from './styles'
 import logo from '/logo.png'
@@ -7,11 +8,10 @@ import {
   FaHome,
   FaRandom,
   FaTv,
-  FaSpinner,
   FaSearch
 } from 'react-icons/fa'
+import { BsFillPersonFill } from 'react-icons/bs'
 import { List, X } from 'phosphor-react'
-import { useState } from 'react'
 
 export function Header() {
   const [click, setClick] = useState(false)
@@ -39,7 +39,7 @@ export function Header() {
               <span>Home</span>
             </Link>
 
-            <Link to={`movie/`}>
+            <Link to='movie/'>
               <FaFilm />
               <span>Filmes</span>
             </Link>
@@ -49,12 +49,12 @@ export function Header() {
               <span>Series</span>
             </Link>
 
-            {/* <Link to="/breve/breve">
-              <FaSpinner />
-              <span>Em breve</span>
-            </Link>  */}
+            <Link to="/persons">
+              <BsFillPersonFill />
+              <span>Pessoas</span>
+            </Link> 
 
-            <Link to="/popular/popular">
+            <Link to="/random">
               <FaRandom />
               <span>Random</span>
             </Link>

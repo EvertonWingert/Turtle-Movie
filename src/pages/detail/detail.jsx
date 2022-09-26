@@ -163,6 +163,24 @@ export function Detail() {
           ></ReactPlayer>
         </Video>
       </ContainerVideo>
+
+        
+
+      {/* <div>
+        {
+          detail &&
+          detail.recommendations &&
+          detail.recommendations.map(reco => {
+            return (
+              <>
+               <h2>Recomendações</h2>
+              <Cards list={reco.recommendations.results.slice(0, 8)} type={type}/>
+              </>
+            )
+          })
+        }
+      
+      </div> */}
     </>
   )
 }
