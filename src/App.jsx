@@ -1,32 +1,30 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Header } from './components/Header'
-import { Home } from './pages/home/home'
-import { Movies } from './pages/movies/movies'
-import { Series } from './pages/series/series'
-import { Detail } from './pages/detail/detail'
-import { Persons } from './pages/persons/persons'
-import { Person } from './pages/persons/person'
-import { Search } from './pages/search/search'
-import { Random } from './pages/random/random'
+import { Home } from './pages/Home/Home'
+import { Movies } from './pages/Movies/Movies'
+import { Series } from './pages/Series/Series'
+import { Persons } from './pages/Persons/Persons'
+import { Detail } from './pages/Detail/Detail'
+import { Person } from './pages/Persons/Person'
+
+
 import GlobalStyle from './styles/global'
 
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <GlobalStyle />
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" index element={<Home />}/>
         <Route path="/movies" element={<Movies />} />
         <Route path="/series" element={<Series />} />
         <Route path="/persons" element={<Persons />} />
         <Route path="/detail/:type/:id" element={<Detail />} />
         <Route path="/person/:id" element={<Person />} />
-        <Route path="/random" element={<Random />} />
-        <Route path="/search" element={<Search />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   )
 }
 

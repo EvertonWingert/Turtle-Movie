@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import styled from 'styled-components'
-import { Title } from '../home/styles'
+import { Title } from '../Home/styles'
 
 export function Persons() {
   const [person, setPerson] = useState()
