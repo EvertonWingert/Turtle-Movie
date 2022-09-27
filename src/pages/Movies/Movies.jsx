@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { Cards } from '../../components/Card'
 import { Section, Title, CardContainer } from '../Home/styles'
 
-export function Movie() {
+export function Movies() {
   const [trendingMovies, setTrendingMovies] = useState([])
 
   useEffect(() => {
