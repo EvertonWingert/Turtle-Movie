@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Slider } from '../../components/Slider'
-import { Cards } from '../../components/Card/'
+import { Cards } from '../../components/Card'
 import { Section, Title, CardContainer } from './styles'
 
 export function Home() {

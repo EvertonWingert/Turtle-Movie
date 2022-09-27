@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Cards } from '../../components/Card'
-import { Section, Title, CardContainer } from '../Home/styles'
+import { Section, Title, CardContainer } from '../home/styles'
 
 export function Movies() {
   const [trendingMovies, setTrendingMovies] = useState([])
