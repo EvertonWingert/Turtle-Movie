@@ -9,7 +9,6 @@ import 'moment/locale/pt-br'
 moment.locale('pt-br')
 
 import { BsPeopleFill, BsFillStarFill } from 'react-icons/bs'
-
 import {
   ContainerDescription,
   ContentDescription,
@@ -18,7 +17,8 @@ import {
   Video
 } from './styles'
 
-export function Detail() {
+
+function Detail() {
   const [detail, setDetail] = useState()
   const { id, type } = useParams()
 
@@ -163,24 +163,8 @@ export function Detail() {
           ></ReactPlayer>
         </Video>
       </ContainerVideo>
-
-        
-
-      {/* <div>
-        {
-          detail &&
-          detail.recommendations &&
-          detail.recommendations.map(reco => {
-            return (
-              <>
-               <h2>Recomendações</h2>
-              <Cards list={reco.recommendations.results.slice(0, 8)} type={type}/>
-              </>
-            )
-          })
-        }
-      
-      </div> */}
     </>
   )
 }
+
+export default Detail

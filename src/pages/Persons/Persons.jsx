@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { Title } from '../Home/styles'
 
-export function Persons() {
+function Persons() {
   const [person, setPerson] = useState()
 
   useEffect(() => {
@@ -53,6 +53,9 @@ export function Persons() {
     </Container>
   )
 }
+
+export default Persons
+
 
 export const Container = styled.div`
   display: flex;

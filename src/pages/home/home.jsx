@@ -7,7 +7,7 @@ import { Slider } from '../../components/Slider'
 import Cards from '../../components/Card/'
 import { Section, Title, CardContainer } from './styles'
 
-export function Home() {
+function Home() {
   const [trendingMovies, setTrendingMovies] = useState([])
 
   useEffect(() => {
@@ -39,3 +39,5 @@ export function Home() {
     </>
   )
 }
+
+export default Home

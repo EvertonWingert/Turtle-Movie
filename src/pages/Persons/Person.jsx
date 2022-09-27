@@ -6,7 +6,7 @@ import Cards from '../../components/Card'
 
 import { ContainerPerson, Description, Info, Bio, PersonMovies, PersonDetail } from './styles'
 
-export function Person() {
+function Person() {
   const [person, setPerson] = useState()
   const { id, type } = useParams()
 
@@ -109,3 +109,5 @@ export function Person() {
     </ContainerPerson>
   )
 }
+
+export default Person

@@ -1,6 +1,6 @@
 import Erro404 from '/404.svg'
 
-export function Random() {
+function Random() {
   return (
     <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
       <img 
@@ -11,4 +11,6 @@ export function Random() {
     </div>
   )
 }
+
+export default Random
 
