@@ -2,7 +2,7 @@ import { APIkey } from '../../config/key'
 import moment from 'moment/moment'
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import Cards from '../../components/Card/card'
+import Cards from '../../components/Card'
 
 import { ContainerPerson, Description, Info, Bio, PersonMovies, PersonDetail } from './styles'
 
@@ -11,16 +11,12 @@ export function Person() {
   const { id, type } = useParams()
 
   useEffect(() => {
-    getPerson()
-  }, [type])
-
-  const getPerson = () => {
     fetch(
       `https://api.themoviedb.org/3/person/${id}?api_key=${APIkey}&language=pt-BR&append_to_response=combined_credits`
     )
       .then(response => response.json())
       .then(data => setPerson(data))
-  }
+  }, [type])
 
   return (
     <ContainerPerson>
