@@ -1,13 +1,13 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Header } from "./components/Header"
-import { Detail } from './pages/detail/detail'
-import { Persons } from './pages/person/persons'
-import { Err } from './pages/err/err'
-import { Home } from './pages/home/home'
-import { Movie } from './pages/movie/movie'
-import { Serie } from './pages/serie/serie'
+import { Detail } from './pages/Detail/Detail'
+import { Persons } from './pages/Persons/Persons'
+import { Err } from './pages/Err/Err'
+import { Home } from './pages/Home/home'
+import { Movies } from './pages/Movies/Movies'
+import { Serie } from './pages/Series/Series'
 import GlobalStyle from './styles/global'
-import { Person } from './pages/person/person'
+import { Person } from './pages/Persons/Person'
 
 function App() {
   return (
@@ -16,12 +16,12 @@ function App() {
       <Header /> 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/movie" element={<Movie />} />
-          <Route path="/serie" element={<Serie />} /> 
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/series" element={<Serie />} /> 
           <Route path="/persons" element={<Persons />} /> 
           <Route path="/detail/:type/:id" element={<Detail /> } />
           <Route path="/person/:id" element={<Person /> } />
-          <Route path="/*" element={<Err />} />
+          {/* <Route path="/*" element={<Err />} /> */}
         </Routes>
     </BrowserRouter>
   )

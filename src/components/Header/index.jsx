@@ -34,32 +34,32 @@ export function Header() {
 
         <NavMenu onClick={handleOpen} click={click}>
           <ul>
-            <Link to={`/`}>
+            <Link to="/">
               <FaHome />
               <span>Home</span>
             </Link>
 
-            <Link to={`/movie`}>
+            <Link to="/movies">
               <FaFilm />
               <span>Filmes</span>
             </Link>
 
-            <Link to={`/serie`}>
+            <Link to="/series">
               <FaTv />
               <span>Series</span>
             </Link>
 
-            <Link to={`/persons`}>
+            <Link to="/persons">
               <BsFillPersonFill />
               <span>Pessoas</span>
             </Link> 
 
-            <Link to={`/random`}>
+            <Link to="/random">
               <FaRandom />
               <span>Random</span>
             </Link>
 
-            <Link to={`/search`}>
+            <Link to="/search">
               <FaSearch />
               <span>Pesquisar</span>
             </Link>
