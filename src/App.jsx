@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Header } from './components/Header'
 import { Home } from './pages/Home/Home'
-import { Movies } from './pages/Movies/Movies'
+import { Movie } from './pages/Movies/Movies'
 import { Series } from './pages/Series/Series'
 import { Persons } from './pages/Persons/Persons'
 import { Detail } from './pages/Detail/Detail'
@@ -18,7 +18,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" index element={<Home />}/>
-        <Route path="/movies" element={<Movies />} />
+        <Route path="/movies" element={<Movie />} />
         <Route path="/series" element={<Series />} />
         <Route path="/persons" element={<Persons />} />
         <Route path="/detail/:type/:id" element={<Detail />} />
