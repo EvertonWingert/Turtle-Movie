@@ -18,7 +18,7 @@ import {
 } from './styles'
 
 
-function Detail() {
+export function Detail() {
   const [detail, setDetail] = useState()
   const { id, type } = useParams()
 
@@ -166,5 +166,3 @@ function Detail() {
     </>
   )
 }
-
-export default Detail

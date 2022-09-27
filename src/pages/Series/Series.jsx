@@ -2,10 +2,10 @@ import { APIkey } from '../../config/key'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Cards from '../../components/Card'
+import { Cards } from '../../components/Card'
 import {Section, Title, CardContainer } from '../Home/styles'
 
-function Series() {
+export function Series() {
   const [trendingMovies, setTrendingMovies] = useState([])
  
   useEffect(() => {
@@ -38,5 +38,3 @@ function Series() {
     </>
   )
 }
-
-export default Series

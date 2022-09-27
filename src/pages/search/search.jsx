@@ -1,6 +1,6 @@
 import Erro404 from '/404.svg'
 
-function Search() {
+export function Search() {
   return(
     <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
       <img 
@@ -11,5 +11,3 @@ function Search() {
     </div>
   )
 }
-
-export default Search

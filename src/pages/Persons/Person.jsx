@@ -2,11 +2,11 @@ import { APIkey } from '../../config/key'
 import moment from 'moment/moment'
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import Cards from '../../components/Card'
+import { Cards } from '../../components/Card'
 
 import { ContainerPerson, Description, Info, Bio, PersonMovies, PersonDetail } from './styles'
 
-function Person() {
+export function Person() {
   const [person, setPerson] = useState()
   const { id, type } = useParams()
 
@@ -109,5 +109,3 @@ function Person() {
     </ContainerPerson>
   )
 }
-
-export default Person

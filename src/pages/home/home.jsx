@@ -4,10 +4,10 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Slider } from '../../components/Slider'
-import Cards from '../../components/Card/'
+import { Cards } from '../../components/Card/'
 import { Section, Title, CardContainer } from './styles'
 
-function Home() {
+export function Home() {
   const [trendingMovies, setTrendingMovies] = useState([])
 
   useEffect(() => {
@@ -39,5 +39,3 @@ function Home() {
     </>
   )
 }
-
-export default Home

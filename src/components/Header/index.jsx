@@ -13,7 +13,7 @@ import {
 import { BsFillPersonFill } from 'react-icons/bs'
 import { List, X } from 'phosphor-react'
 
- function Header() {
+ export function Header() {
   const [click, setClick] = useState(false)
 
   const handleOpen = () => {
@@ -70,5 +70,3 @@ import { List, X } from 'phosphor-react'
     </Nav>
   )
 }
-
-export default Header

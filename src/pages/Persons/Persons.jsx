@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { Title } from '../Home/styles'
 
-function Persons() {
+export function Persons() {
   const [person, setPerson] = useState()
 
   useEffect(() => {
@@ -53,8 +53,6 @@ function Persons() {
     </Container>
   )
 }
-
-export default Persons
 
 
 export const Container = styled.div`
