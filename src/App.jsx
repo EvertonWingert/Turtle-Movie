@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-import { Header } from './components/Header'
-import { Home } from './pages/Home/Home'
-import { Movies } from './pages/Movies/Movies'
-import { Series } from './pages/Series/Series'
-import { Persons } from './pages/Persons/Persons'
-import { Detail } from './pages/Detail/Detail'
-import { Person } from './pages/Persons/Person'
+import { Header } from "./components/Header"
+import { Home } from "./pages/Home/Home"
+import { Movies } from "./pages/Movies/Movies"
+import { Series } from "./pages/Series/Series"
+import { Persons } from "./pages/Persons/Persons"
+import { Detail } from "./pages/Detail/Detail"
+import { Person } from "./pages/Persons/Person"
 
 import GlobalStyle from './styles/global'
 
