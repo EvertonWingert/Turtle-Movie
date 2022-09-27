@@ -4,7 +4,7 @@ import { Home } from './pages/Home/Home'
 
 import { Series } from './pages/Series/Series'
 import { Persons } from './pages/Persons/Persons'
-import { Detail } from './pages/Detail/Detail'
+
 import { Person } from './pages/Persons/Person'
 
 
@@ -21,7 +21,7 @@ function App() {
        
         <Route path="/series" element={<Series />} />
         <Route path="/persons" element={<Persons />} />
-        <Route path="/detail/:type/:id" element={<Detail />} />
+        
         <Route path="/person/:id" element={<Person />} />
       </Routes>
     </Router>
